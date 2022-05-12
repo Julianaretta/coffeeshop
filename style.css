@@ -17,10 +17,12 @@ p {
   color: darkslategray;
   font-size: 1.5rem;
 }
-#heading {
-  color: rgb(9, 139, 156);
-  font-size: 3rem;
+
+h4{
+    color: rgb(22, 129, 153);
+  font-size: 2rem;
 }
+
 #linking {
   color: darkseagreen;
   font-size: 1.5rem;
@@ -29,4 +31,96 @@ p {
 #footer {
   font-size: x-large;
 }
+nav {
+  display:flex;
+  justify-content: space-around;
+  align-items: center;
+min-height: 8vh;
+font-family: 'Poppins', sans-serif;
+font-weight: 1000;
+text-transform: initial;
+}
 
+.nav-links{
+display:flex;
+justify-content: space-around;
+width:40%;
+text-transform: underline; 
+}
+.nav-links a{
+  color:rgb(132, 26, 48);
+  text-decoration: none;
+  letter-spacing: 3px;
+  font-weight: bolder;
+  font-size:15px;
+}
+
+.burger{
+  display:none;
+  cursor: pointer;
+}
+.burger div{
+  width:25px;
+  background-color:red;
+  margin:5px;
+height: 3px;
+transition: all 0.3s ease;
+}
+
+
+@media screen and (max-width: 1024px) {
+  .nav-links{
+    width: 60%;
+
+  }
+}
+
+@media screen and (max-width: 768px) {
+  body{
+    overflow: hidden;
+  }
+ 
+  .nav-links {
+      position:absolute;
+      right: 0px;
+      height:92vh;
+      top:8vh;
+        background-color: cadetblue;
+        display: flex;
+          flex-direction: column;
+          align-items: center;
+          width: 50%;
+          transform: translateX(100%);
+          transition: 0.5s ease-in;
+  }
+  .nav-links li{
+    opacity: 0;
+  }
+  .burger{
+    display: block;
+  }
+}
+.nav-active{
+  transform: translateX(0);
+}
+
+@keyframes navLinkFade{
+  from{
+    opacity: 0;
+    transform: 50px;
+  }
+  to{
+    opacity: 1;
+    transform: translateX(0px);
+  }
+}
+
+.toggle .line1{
+transform: rotate (-45deg) translate(-5px, 6px);
+}
+.toggle .line2 {
+opacity: 0;
+}
+.toggle .line3 {
+transform: rotate (45deg) translate(-5px, -6px);
+}
